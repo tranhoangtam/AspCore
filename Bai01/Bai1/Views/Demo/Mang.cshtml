@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewData["Title"] = "Mang";
+}
+
+<h2>Mảng</h2>
+@{ 
+    Random rd = new Random();
+    int sophantu = rd.Next(10, 1000);
+
+    //Mảng động chỉ số là số:List
+    var mangNguyen = new List<int>();
+    for (int i = 0; i < sophantu; i++)
+    {
+        mangNguyen.Add(rd.Next(10,1000));
+    }
+
+}
+
+Mảng @sophantu Ngẩu nhiên: 
+@string.Join(",",mangNguyen)
+<br>
+@foreach (var item in mangNguyen)
+{    
+    <div>@item</div>
+    //sau đoạn html viết code C# ko có giá trị
+}
+
+@{ 
+    //Mạng động kiểu tùy ý
+    Dictionary<string, double> dsHV = new Dictionary<string, double>();
+    dsHV["Tào"] = 10.23;
+    dsHV["Đào"] = 12.8;
+    dsHV["Cam"] = 24.69;
+}
+
+Mạng động
+@foreach (var key in dsHV.Keys)
+{
+    <div>@dsHV[key]</div>
+}
+

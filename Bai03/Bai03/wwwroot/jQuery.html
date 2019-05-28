@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <script src="lib/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+    <link href="lib/jquery-ui-1.12.1.custom/jquery-ui.css" rel="stylesheet" />
+</head>
+<body>
+    Ngày sinh: <input id="txtNgaySinh" /> <br/>
+    Từ ngày: <input id="txtTuNgay" />
+    Đến ngày: <input id="txtDenNgay" />
+    <button id="btnShowDlg" type="button">
+        Show Dialog
+    </button>
+    <div id="dlg" title="Thông báo"
+         style="display:none" <!--ẩn thẻ div-->
+         > 
+        Thứ 7 (18.5) và chủ nhật (19/5) nghỉ
+    </div>
+
+
+    <script>
+        $(function () { //Form Load
+            $("#btnShowDlg").click(function () {
+                $("#dlg").dialog();
+            });
+            $("#txtNgaySinh").datepicker({
+                format: "yy-mm-dd",                
+                maxDate: "-15y",
+                changeMonth: true, //cho phép sổ danh sách tháng
+                changeYear:true // cho phép số danh sách năm
+            });
+            $("#txtTuNgay").datepicker({
+                format: "yy-mm-dd",
+                maxDate:"-7"
+            });
+            $("#txtDenNgay").datepicker({
+                format: "yy-mm-dd",
+                maxDate:"0"
+            });
+        });
+    </script>
+</body>
+</html>

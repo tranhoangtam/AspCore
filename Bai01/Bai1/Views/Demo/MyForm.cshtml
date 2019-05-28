@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewData["Title"] = "MyForm";
+}
+
+<h2>MyForm</h2>
+
+<h1>Nhất nghệ</h1>
+@{
+    int n = 13;
+}
+@for (int i = 0; i < 11; i++)
+{
+    int kq = n * i;
+    <div>@n x @i=@kq</div>
+}

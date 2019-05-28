@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="css/mytemplate.css" rel="stylesheet" />
+    <link href="lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+</head>
+<body>
+    <div class="container"  style="border: 2px dotted red">
+        <header class="nn-hearder">
+            <h1 class="nn-company">Nhất nghệ Shop</h1>
+            <img class="nn-logo" src="images/logonn.png" />
+            <h5 class="nn-slogon">Mua may bán đắt, ích nước lợi nhà</h5>
+        </header>
+        <!--Menu ngang-->
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <a class="navbar-brand" href="#">
+                <img src="images/Basket.png" width="40px;" />
+                NN Shop
+            </a>
+
+            <!-- Toggler/collapsibe Button -->
+            <!--Nút đóng mở menu-->
+            <button class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!--Liên kết menu--> 
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Giới thiệu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Góp ý</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Liên hệ</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <!--<a class="btn btn-primary dropdown-toggle"
+               data-toggle="dropdown">
+                Thành viên
+            </a>-->
+                        <a class="nav-link dropdown-toggle"
+                           data-toggle="dropdown">
+                            Thành viên
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Đăng nhập</a>
+                            <a class="dropdown-item" href="#">Đăng ký</a>
+                            <a class="dropdown-item" href="#">Quên mật khẩu</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Tài khoản</a>
+                            <a class="dropdown-item" href="#">Đăng xuất</a>
+                        </div>
+                    </li>
+                </ul>
+                <!--Menu ngôn ngữ-->
+                <!--ml-auto canh trái-->
+                <!--mr-auto canh phải-->
+                <!--https://stackoverflow.com/questions/19733447/bootstrap-navbar-with-left-center-or-right-aligned-items-->
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Tiếng Anh
+                            <img src="images/eng.gif" />
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Tiếng việt
+                            <img src="images/vit.gif" />
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav><!--kết thúc menu-->
+
+        <div class="row nn-sheet" >
+            <aside class="col-md-3">
+                <div class="card">
+                    <div class="card-header bg-info">Danh mục</div>
+                    <!--<div class="card-body">--> <!--Thụt vào-->
+                        <div class="list-group">
+                            <a href="" class="list-group-item">
+                                <i class="fas fa-phone"></i>
+                                Điện thoại
+                                <span class="badge badge-light badge-pill">10</span>
+                            </a>
+                            <a href="" class="list-group-item">
+                                <i class="fa fa-mobile"></i>
+                                Máy tính bảng
+                            </a>
+                            <a href="" class="list-group-item">
+                            <i class="fas fa-laptop"></i>
+                                Laptop
+                            </a>
+                        </div>
+                    <!--</div>-->
+                </div>
+            </aside>
+            <div class="col-md-9">
+                Nội dung
+            </div>
+        </div>
+    </div>
+</body>
+</html>

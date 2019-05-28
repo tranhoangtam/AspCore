@@ -1,0 +1,52 @@
+﻿.hh-box
+{
+    width:220px; height:300px;border:1px solid blue;
+    border-radius: 7px;/*viền cong*/   
+    text-align:center;
+    position:relative;
+    display:inline-block;/*Khối nội tuyến, tự trôi lên*/
+    margin:35px 5px 5px 5px;
+}
+
+.hh-box:hover
+{
+    /*box-show: ngang doc độ dày màu;*/
+    box-shadow:0 0 10px red;
+}
+
+.hh-img
+{
+    width:180px;
+    height:240px;    
+}
+.hh-moi{
+    width:80px;height:80px;position:absolute;top:0;right:0;
+}
+.hh-gia{
+    position:absolute;
+    left:5px;
+    bottom:5px;
+    font-size:large;
+    color:green;
+}
+.hh-ten {
+    position: absolute;
+    left: 0px;
+    top: -30px;
+    font-size: x-large;
+    font-weight: bolder;
+    color: tomato;
+    background-color: aqua;
+    width:inherit;
+    text-align:center;
+}
+
+.hh-tenduoi {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    font-size: x-large;
+    color: tomato;
+    background-color:aqua;
+    /*width:inherit;*/
+}

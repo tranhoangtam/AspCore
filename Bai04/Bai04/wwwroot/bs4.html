@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+
+
+        <!--https://www.w3schools.com/bootstrap4/bootstrap_grid_basic.asp-->
+        <!--.col- (extra small devices - screen width less than 576px)
+    .col-sm- (small devices - screen width equal to or greater than 576px)
+    .col-md- (medium devices - screen width equal to or greater than 768px)
+    .col-lg- (large devices - screen width equal to or greater than 992px)
+    .col-xl- (xlarge devices - screen width equal to or greater than 1200px)-->
+        <!--https://www.w3schools.com/bootstrap4/bootstrap_grid_basic.asp-->
+        <div class="row">
+            <!-- Tỷ lệ tối đa trên cùng 1 dòng là 12 nếu lớn hơn nó sẽ xuống dòng-->
+            <div class="col-sm-3 col-6 col-md-2 bg-danger">.col-sm-3</div>
+            <div class="col-sm-3 col-3 col-md-3 bg-primary">.col-sm-3</div>
+            <div class="col-sm-3 col-3 col-md-3 bg-info">.col-sm-3</div>
+            <div class="col-sm-3 col-8 col-md-4 bg-success">.col-sm-3</div>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary">Primary</button>
+            <input type="submit" class="btn btn-dark" value="Dark" />
+            <button class="btn btn-success">Success</button>
+            <input type="button" class="btn btn-dark" value="Dark" />
+            <a class="btn btn-info" href="http://nhatnghe.com">Nhất nghệ</a>
+        </div>
+
+
+
+        <!--Table không thay đổi cột hay dòng  khi zoom-->
+        <!--https://www.w3schools.com/bootstrap4/bootstrap_tables.asp-->
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>John</td>
+                    <td>Doe</td>
+                    <td>john@example.com</td>
+                </tr>
+                <tr>
+                    <td>Mary</td>
+                    <td>Moe</td>
+                    <td>mary@example.com</td>
+                </tr>
+                <tr>
+                    <td>July</td>
+                    <td>Dooley</td>
+                    <td>july@example.com</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!--NavBar-->
+        <!--https://www.w3schools.com/bootstrap4/bootstrap_navbar.asp-->
+        <nav class="navbar navbar-expand-sm bg-primary navbar-light">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="http://nhatnghe.com">Nhất nghệ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <img src="images/new-icon.png" width="20px;" />
+                        IPhone
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!--Dropdown-->
+        <!--https://www.w3schools.com/bootstrap4/bootstrap_dropdowns.asp-->
+        <div class="dropdown">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                Dropdown button
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Đăng nhập</a>
+                <a class="dropdown-item" href="#">Đăng ký</a>
+                <a class="dropdown-item" href="#">Quên mật khẩu</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Tài khoản</a>
+                <a class="dropdown-item" href="#">Đăng xuất</a>                
+            </div>
+        </div>
+        <!--Tab-->
+        <!--https://www.w3schools.com/bootstrap4/bootstrap_ref_js_tab.asp-->
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#tskt">Thông số kỹ thuật</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#menu1">Hình ảnh</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#menu2">Đánh giá</a>
+            </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div id="tskt" class="container tab-pane active">
+                <h3>IP Phone 10 XS Max</h3>
+                256 GB - RAM 3G
+            </div>
+            <div id="menu1" class="container tab-pane fade">
+                Hình ảnh ở đây
+                <img src="HangHoa/iphone-x-256gb-gray.jpg" width="200px" />
+            </div>
+            <div id="menu2" class="container tab-pane fade">
+                Sản phẩm tốt nhất
+            </div>
+        </div>
+
+        <!--https://www.w3schools.com/bootstrap4/bootstrap_alerts.asp-->
+        <button type="button" id="btnThanhCong">Thành công</button>
+        <script>
+            $(document).ready(function() {
+                $("#lblThanhCong").hide(0);
+
+                $("#btnThanhCong").click(function () {
+                    $("#lblThanhCong").show(0);
+                    //alert("Thành công!");
+                });
+
+                $("#lblThanhCong").click(function () {
+                    $("#lblThanhCong").hide();
+                });
+            });            
+        </script>
+        <div class="alert alert-success alert-dismissible" id="lblThanhCong">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Thành công!</strong> Thêm sản phẩm thành công.
+        </div>
+    </div>
+</body>
+</html>

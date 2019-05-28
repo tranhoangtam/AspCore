@@ -1,0 +1,105 @@
+﻿@model Bai06.Models.HangHoa
+
+@{
+    ViewData["Title"] = "Đọc ghi file";
+    HangHoa hh = (ViewBag.HangHoa != null) ? (HangHoa) ViewBag.HangHoa : new HangHoa();
+}
+
+<h1>Đọc ghi file</h1>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        @if (ViewBag.ThongBao != null)
+        {
+            <div class="alert alert-success alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <strong>@ViewBag.ThongBao</strong> 
+            </div>
+        }
+        
+        @if (ViewBag.Loi != null)
+        {
+            <div class="alert alert-danger alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>@ViewBag.Loi</strong> 
+            </div>
+
+            <script type="text/javascript">  
+                $(document).ready(function () {  
+                    $("#btnGhiFileText").click(function () {  
+                        $("#idthongbao").modal('show');  
+                    });  
+  
+                    $("#btnGhiFileText").click(function () {  
+                        $("#idthongbao").modal('hide');  
+                    });  
+                });  
+            </script>  
+        }
+
+        <form asp-action="DocGhiFile">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="MaHH" class="control-label"></label>
+                <input asp-for="MaHH" value="@hh.MaHH" class="form-control"/>
+                <span asp-validation-for="MaHH" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TenHH" class="control-label"></label>
+                <input asp-for="TenHH" value="@hh.TenHH" class="form-control" placeholder="Ví dụ: Iphone, Samsung "/>
+                <span asp-validation-for="TenHH" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hinh" class="control-label"></label>
+                <input asp-for="Hinh" value="@hh.Hinh" class="form-control"/>
+                <span asp-validation-for="Hinh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DonGia" class="control-label"></label>
+                <input asp-for="DonGia" value="@hh.DonGia" class="form-control"/>
+                <span asp-validation-for="DonGia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SoLuong" class="control-label"></label>
+                <input asp-for="SoLuong" value="@hh.SoLuong" class="form-control"/>
+                <span asp-validation-for="SoLuong" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Ghi file text" name="ghi" class="btn btn-primary" id="btnGhiFileText" />
+                <input type="submit" value="Ghi file json" name="ghi" class="btn btn-primary" />
+                <a asp-action="ReadTextFile" class="btn btn-success">Đọc file text</a>
+                <a asp-action="ReadJsonFile" class="btn btn-success">Đọc file json</a>
+            </div>
+            
+            <!-- The Modal -->
+            <div class="modal fade" id="idthongbao">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+      
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Thông báo</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+        
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            @ViewBag.Loi
+                        </div>
+        
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+        
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

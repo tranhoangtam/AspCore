@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous">
+    </script>
+    <style>
+        .loi{background-color:red;color:white;}
+        .thanhcong{background-color:blue;color:black;}
+        td{}
+    </style>
+</head>
+<body>
+    <table align="center">
+        <tr>
+            <td>
+                <div>Username:<input type="text" id="txtUser" /></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>Password: <input type="password" id="txtPass" /></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" id="btnLogin">Login</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div id="message"></div>
+            </td>
+        </tr>
+    </table>
+      <script>
+          $(function () {
+              $("#btnLogin").click(function () {
+                  var user = $("#txtUser");
+                  var pass = $("#txtPass");
+
+                  //nếu đang logout
+                  if ($(this).html() == "Logout") {
+                      $(this).html("Login");
+                      //bỏ thẻ được thêm
+                      user.next().remove(); // bỏ các tag được thêm sau hàm after;
+                      pass.next().remove();
+                      //hiện thẻ input ra
+                      user.show();
+                      pass.show();
+
+                      user.val("");
+                      pass.val("");
+                      $("#message").html("");
+                      return true;
+                  }
+
+
+                  //nêu 1 trong 2 rong
+                  if (user.val().length == 0 || pass.val().length == 0)
+                  {
+                      alert("Vui lòng nhập tên hoặc mật khẩu!");
+                      $("#message").html("Chưa nhập thông tin đăng nhập");
+                      $("#message").css({
+                          "color":"red"
+                      });
+                      user.addClass("loi");
+                      pass.addClass("loi");
+                      return false;
+                  }
+
+                  if (user.val().length <5 || pass.val().length<5) {
+
+                      $("#message").html("Chưa nhập thông tin!");
+                      $("#message").css({
+                          "color": "blue",
+                          "font-size": "x-large"
+                      });
+                      user.addClass("loi");
+                      pass.addClass("loi");
+                      return false;
+                  }
+
+                  alert("Đăng nhập thành công!");
+                  $("#message").html("Đăng nhập thành công!");
+                  $("#message").css({
+                      "color": "blue",
+                      "font-size": "x-large"
+                  });
+                  if (user.hasClass("loi")) user.removeClass("loi");
+                  if (pass.hasClass("loi")) pass.removeClass("loi");
+                  $(this).html("Logout"); // đổi login thành logout
+
+                  //hiện nội dung user/pass
+                  user.after("<div>" + user.val() + "</div>"); // bỏ trong thẻ div 
+                  pass.after("<div>" + pass.val() + "</div>");
+                  //ẩn ô nhập
+                  user.hide();
+                  pass.hide();
+                  return true;
+              });
+          });
+      </script>   
+</body>
+</html>

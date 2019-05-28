@@ -1,0 +1,25 @@
+﻿.nn-hearder{height:170px;border:1px solid green;position:relative;}
+.nn-company{position:absolute; top:45px;left:10px;text-shadow: 0 0 4px black;}
+.nn-slogon {
+    position: absolute;
+    top: 95px;
+    left: 10px;
+    /*text-shadow: 0 0 4px black;*/
+    border-top:1px dotted blue;
+}
+
+.nn-logo {    
+    height: 170px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.nn-sheet {
+    min-height: 400px;
+    box-shadow: 0 0 5px lightgray;
+    border: 1px dashed green;
+    margin: 0 4px;
+    border-radius: 5px;
+    padding: 5px;
+}

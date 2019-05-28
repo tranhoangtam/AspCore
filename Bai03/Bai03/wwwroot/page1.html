@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="lib/jquery/dist/jquery.js"></script>
+    
+</head>
+<body>
+    <input id="txtname" placeholder="Họ tên" /> <!--placeholder chữ mờ-->
+    <button type="button" id="btnHello">Hello</button>
+    <div>Div 1</div>
+    <div>Div 2</div>
+    <div>Div 3</div>
+    <div>Div 4</div>
+    <div>Div 5</div>
+    <script>
+        //khi trang render xong thi gọi ham
+        $(function () {
+            //gán sự kiện biến mất khi hơ chuột và thẻ div
+            $("div").hover(function ()
+            {
+                //$(this).hide(1000);
+
+                $(this).css(
+                    {
+                        "color": "red",
+                        "border": "1px solid blue",
+                        "margin":"5px"
+                    });
+            });
+
+            $("div").mouseleave(function () {
+                //$(this).show(1000);
+                $(this).css(
+                    {
+                        "color": "bule",
+                        "border": "1px solid red",
+                        "margin": "10px"
+                    });
+            });
+
+            
+            //gán sự kiện click nút hello
+            $("#btnHello").click(function () {
+                alert("Xin chào " + $("#txtname").val().toLowerCase());
+            });
+        });
+    </script>
+</body>
+</html>
