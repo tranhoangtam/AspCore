@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.645
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bai1", "Bai01\Bai1\Bai1.csproj", "{C00BA5B9-AFCE-492A-97F9-C4E5D1B20606}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bai01", "Bai01\Bai1\Bai01.csproj", "{C00BA5B9-AFCE-492A-97F9-C4E5D1B20606}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bai02", "Bai02\Bai02\Bai02.csproj", "{A516F311-7B5D-400E-8A53-D26E70AABC3C}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bai05", "Bai05\Bai05\Bai05.csproj", "{8C049C2C-243B-41B2-8D9F-A18FE16C4BFB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bai06", "Bai06\Bai06\Bai06.csproj", "{89034368-B342-4020-A2E7-D5DD39384D2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bai07", "Bai07\Bai07.csproj", "{F197553E-FC49-407B-89ED-5584B0E3A3DF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{89034368-B342-4020-A2E7-D5DD39384D2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89034368-B342-4020-A2E7-D5DD39384D2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89034368-B342-4020-A2E7-D5DD39384D2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F197553E-FC49-407B-89ED-5584B0E3A3DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F197553E-FC49-407B-89ED-5584B0E3A3DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F197553E-FC49-407B-89ED-5584B0E3A3DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F197553E-FC49-407B-89ED-5584B0E3A3DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
