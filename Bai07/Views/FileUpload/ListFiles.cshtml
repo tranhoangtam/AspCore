@@ -1,0 +1,17 @@
+﻿@model Bai07.Models.FilesViewModel
+
+@{
+    ViewData["Title"] = "ListFiles";
+}
+
+<h1>List of Files</h1>
+<ul>
+	@foreach (var item in Model.Files)
+	{
+		<li>
+			<a asp-action="Download" asp-route-filename="@item.Name">
+				@item.Name
+			</a>
+		</li>
+	}
+</ul>

@@ -17,6 +17,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bai06", "Bai06\Bai06\Bai06.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bai07", "Bai07\Bai07.csproj", "{F197553E-FC49-407B-89ED-5584B0E3A3DF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tai_Lieu", "Tai_Lieu", "{BF662B6A-5FEC-48E8-9C35-D73622E9B849}"
+	ProjectSection(SolutionItems) = preProject
+		C:\Users\tamth\Desktop\baihoc.docx = C:\Users\tamth\Desktop\baihoc.docx
+		huongdan.html = huongdan.html
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
