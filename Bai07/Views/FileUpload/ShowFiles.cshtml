@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewData["Title"] = "ShowFiles";
+}
+
+<h1>Show Files</h1>
+@foreach(var file in Model)
+{
+	string filename = System.IO.Path.GetFileName(file);
+	<div>@file</div>
+	<img src="~/Data/@filename" />
+
+}

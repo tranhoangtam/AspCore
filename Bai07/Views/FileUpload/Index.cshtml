@@ -3,24 +3,24 @@
 	ViewData["Title"] = "Upload File";
 }
 
-<h1>Upload file</h1>
-<form asp-controller="FileUpload" asp-action="UploadFile" method="post" enctype="multipart/form-data" class="form-inline">
-	<h4>Upload single-file</h4>
-	<hr/>
-	<input type="file" name="file" />
-	<button type="submit">Upload File</button>
+<form enctype="multipart/form-data" 
+      asp-action="UploadFile">
+	<h2>Upload Single File</h2>
+	Tên: <input name="Ten" placeholder="Tên" /><br />
+	Chọn file:
+	<input name="myfile" type="file" />
+	<button>Upload</button>
+	<br />@ViewBag.ThongBao
 </form>
+
 <hr />
-<form asp-controller="FileUpload" asp-action="UploadFiles" method="post" enctype="multipart/form-data">
-	<h4>Upload multi-files</h4>
-	<input type="file" name="files" multiple />
-	<button type="submit">Upload Files</button>
-</form>
-<hr />
-<form asp-controller="FileUpload" asp-action="UploadFileViaModel" method="post" enctype="multipart/form-data" class="form-inline">
-	<input type="file" name="FileToUpload" />
-	<button type="submit">
-		Upload File (model)
-	</button>
+
+<form enctype="multipart/form-data"
+      asp-action="UploadFiles">
+	<h2>Upload Multi File</h2>
+	Chọn file:
+	<input name="myfile" type="file" multiple />
+	<button>Upload</button>
+	<br />@ViewBag.Message
 </form>
 
