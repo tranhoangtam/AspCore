@@ -1,0 +1,85 @@
+﻿@using Microsoft.AspNetCore.Http
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Demo jQuery-Validation</h1>
+<ol>
+    <li>Remote: gửi lên server validation </li>
+    <li>Custom: tự định nghĩa thuộc tính kiểm tra </li>
+    <ul>
+        <li>B1: Định nghĩa hàm kiểm tra luôn có 2 tham số (value, object) và trả vê kết quả (true/false)</li>
+        <li>B2: Gắn hàm kiểm tra và trong JQuery validate</li>
+    </ul>
+</ol>
+<form id="form1">
+    <h1>Đăng ký thành viên</h1>
+    <div>
+        Gmail: <input name="Email"/>
+    </div>
+    <div>
+        Số di động: <input name="DienThoai"/>
+    </div>
+    Mã bảo mật:<input name="MaBaoMat"/>
+    <br/>
+    <span class="text-danger">
+        @*@using Microsoft.AspNetCore.Http sử dụng using ở đây cũng đc*@
+        @*Để sử dụng session bắt buộc khai báo trong startup*@
+
+        @Context.Session.GetString("MaNgauNhien").ToUpper();
+    </span>
+    <br/>
+    <button class="btn-success">Gửi đăng ký</button>
+</form>
+<style> /*định dạng thông báo lỗi*/
+    /*sau khi Inspect và tái định nghĩa <label id="MaBaoMat-error" class="error" for="MaBaoMat" style="" > Sai mã bảo mật</label >*/
+    label.error {
+        color: blue;
+        font-weight: bold;
+        font-size: medium;
+    }
+</style>
+@section Scripts
+{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation/dist/additional-methods.js"></script>
+    <script>
+        //Đinh nghĩa hàm
+        function IsGmail(value, sender) {
+            //khai báo mẫu/partten/template (bắt đầu /^ và kết thúc bởi $)
+            //https://developer.mozilla.org/vi/docs/Web/JavaScript/Guide/Regular_Expressions 
+            //var gmailparttern = "/^[a-z]+@@gmail.com$";
+            var gmailparttern = /^[a-z](.[a-z]+)*@@gmail.com$/;
+            return gmailparttern.test(value) || this.optional(sender); //optional nếu trống sẽ ko kiểm tra
+        }
+
+        function IsPhone(value, sender) {
+            var parttern = /^0[35789][0-9]{8}$/;
+            return parttern.test(value) || this.optional(sender);
+        }
+        //Gắn vào
+        $.validator.addMethod("gmail", IsGmail, "Không là Gmail");//nếu có đinh messages nó sẽ lấy giá trị này
+        $.validator.addMethod("sodidong", IsPhone, "Không phải số di động Việt Nam");
+
+        $(function() {
+            $("#form1").validate(
+                {
+                    rules: {
+                        MaBaoMat: {remote: "/Demo/KiemTraBaoMat"},
+                        Email: { gmail:true },
+                        DienThoai: { sodidong: true }
+                    },
+                    messages: {
+                        MaBaoMat: { remote: "Sai mã bảo mật" },
+                        Email: { remote: "Email không đúng" }//đã định nghĩa message
+                    }
+                });
+        });
+    </script>
+}
+
+@section TacGia
+{
+    Trần Văn Ốm
+}
+

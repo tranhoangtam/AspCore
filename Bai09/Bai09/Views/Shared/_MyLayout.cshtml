@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @*Chèn CSS*@
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap-grid.css" rel="stylesheet" />
+</head>
+<body>
+	<span class="border border-primary">
+		<div class="container border-success ">
+			<header id="myHeader"> Welcome </header>
+			<nav></nav>
+			<div class="row">
+				<div class="col-md-3 bg-light">
+					@RenderSection("GioHang", false)
+					@await Html.PartialAsync("_ChungLoai")
+					@{
+						string[] danhmuc = { "Bia", "Nước", "Tivi", "Khô", "Ốc" };
+						await Html.RenderPartialAsync("_Category", danhmuc);
+					}
+				</div>
+				<div class="col-md-9">
+					@RenderBody() @*chỗ định nghĩa nội dung khác trang con*@
+				</div>
+			</div>
+			<footer>
+				Bản quyền thuộc về Em @@2019
+				@RenderSection("TacGia", required: true)
+			</footer>
+		</div>
+		@*@RenderSection("Scripts", required: false)*@
+		@RenderSection("QuangCao", required: false)
+		@*Chèn JS*@
+		<script src="~/lib/jquery/dist/jquery.js"></script>
+		<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+		@RenderSection("Scripts", required: false)
+	</span>
+</body>
+</html>
