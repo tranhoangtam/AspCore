@@ -1,0 +1,12 @@
+﻿
+@model IEnumerable<Loai>
+@{
+    ViewData["Title"] = "Home Page";
+}
+@foreach (Loai lo in Model)
+{
+    <div>
+        @lo.TenLoai - @lo.MaLoai
+    </div>
+}
+

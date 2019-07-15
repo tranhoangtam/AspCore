@@ -1,0 +1,93 @@
+﻿
+@{
+    ViewData["Title"] = "jQueryValidate";
+}
+<style>
+    label.error {
+        color: red;
+    }
+</style>
+<h1>jQuery Validate</h1>
+
+<form id="form1">
+    <div class="row">
+        <span class="col-md-3">Họ tên</span>
+        <div class="col-md-9">
+            <input name="HoTen" class="form-control" />
+        </div>
+    </div>
+    <div class="row">
+        <span class="col-md-3">Tuổi</span>
+        <div class="col-md-9">
+            <input name="Tuoi" class="form-control" />
+        </div>
+    </div>
+    <div class="row">
+        <span class="col-md-3">Email</span>
+        <div class="col-md-9">
+            <input name="Email" class="form-control" />
+        </div>
+    </div>
+    <div class="row">
+        <span class="col-md-3">Nhập lại email</span>
+        <div class="col-md-9">
+            <input name="NhapLaiEmail" class="form-control" />
+        </div>
+    </div>
+    <div class="row">
+        <span class="col-md-3">Số tài khoản</span>
+        <div class="col-md-9">
+            <input name="TaiKhoan" class="form-control" />
+        </div>
+    </div>
+    <div class="row">
+        <span class="col-md-3">Hình ảnh</span>
+        <div class="col-md-9">
+            <input name="HinhAnh" type="file" class="form-control" />
+        </div>
+    </div>
+    <div class="row">
+        <span class="col-md-3">Điểm</span>
+        <div class="col-md-9">
+            <input name="Diem" class="form-control" />
+        </div>
+    </div>
+    <div class="row">
+        <span class="col-md-3">Hệ số</span>
+        <div class="col-md-9">
+            <input name="HeSo" class="form-control" />
+        </div>
+    </div>
+    <button>Đăng ký</button>
+</form>
+
+@section Scripts{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation/dist/additional-methods.js"></script>
+    <script>
+        $(function () {
+            $("#form1").validate({
+                rules: {
+                    HoTen: { required: true, minlength: 4 },
+                    Tuoi: { required: true, digits: true, range: [18, 60] },
+                    Email: { email: true, required: true },
+                    NhapLaiEmail: { email: true, equalTo: "input[name='Email']" },
+                    TaiKhoan: { creditcard: true },
+                    HinhAnh: { extension: "png|gif|jpg" },
+                    Diem: { number: true, range: [0, 10] },
+                    HeSo: { digits: true, min: 1 }
+                },
+                messages: {
+                    Diem: { number: "Số thực", range: "Điểm từ 0 --> 10" },
+                    HeSo: { digits: "Số nguyên" },
+                    HinhAnh: { extension: "Chỉ chấp nhận file hình png|gif|jpg" },
+                    TaiKhoan: { creditcard: "Số tài khoản không đúng" },
+                    Email: { required: "*" },
+                    NhapLaiEmail: { equalTo: "Không khớp" },
+                    Tuoi: { digits: "Nhập số nguyên", range: "Tuổi từ 18 - 60" },
+                    HoTen: { required: "*", minlength: "Tối thiểu 4 kí tự" }
+                }
+            });
+        });
+    </script>
+}

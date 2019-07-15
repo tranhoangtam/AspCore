@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Bai15.Models.HangHoa>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<h2>Tìm kiếm</h2>
+<form>
+
+    Tìm:
+    <input class="form-control" name="TuKhoa"/>
+    Giá trị:
+    <input class="form-control" name="GiaTu" type="number" min="0"/>
+    đến:
+    <input class="form-control" name="GiaDen" type="number" min="0"/>
+    <button class="btn btn-primary">Tìm kiếm</button>
+</form>
+<table class="table table-condensed">
+    @if (Model!=null && Model.Count()>0)
+    {
+        @foreach (var hh in Model)
+         {
+             <tr>
+                 <td>@hh.TenHh</td>
+                 <td>
+                     <img src="~/Hinh/HangHoa/@hh.Hinh" width="80px"/>
+                 </td>
+                 <td>@hh.DonGia.Value.ToString("N0") đ</td>
+                 <td>@hh.MaLoaiNavigation.TenLoai</td>
+             </tr>
+         }
+    }
+    
+</table>
+

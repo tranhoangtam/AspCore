@@ -1,0 +1,15 @@
+﻿@using System.Data
+@{
+    ViewData["Title"] = "Index";
+    var data = ViewBag.Data as DataTable;
+}
+
+<h2>Index</h2>
+@foreach (DataRow dr in data.Rows)
+{
+    <div>
+        @dr["MaLoai"].ToString() - 
+        @dr["TenLoai"].ToString()
+    </div>
+}
+
